@@ -23,7 +23,7 @@ module.exports = {
                 loader:'url-loader',
                 options:{
                     // 图片的大小小于8kb，base64处理
-                    // 有点，能够减少请求数量（减轻服务器压力）
+                    // 有点，能够减少请求数量（减 轻服务器压力）
                     // 缺点：图片体积会更大（文件请求更慢）
                     limit:8*1024,
                      // 问题：因为url-loader默认使用es6模块化解析，而html-loader引入图片是commonjs
