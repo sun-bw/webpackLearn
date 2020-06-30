@@ -1,5 +1,5 @@
 {
-  "name": "webpack_test",
+  "name": "webpack_code",
   "version": "1.0.0",
   "description": "webpackLearn",
   "main": "index.js",
@@ -18,5 +18,12 @@
   "homepage": "https://github.com/sun-bw/webpackLearn#readme",
   "dependencies": {
     "jquery": "^3.5.1"
+  },
+  "devDependencies": {
+    "css-loader": "^3.6.0",
+    "less-loader": "^6.1.3",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   }
 }
