@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/sun-bw/webpackLearn#readme",
   "dependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/polyfill": "^7.10.4",
     "eslint": "^7.3.1",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-loader": "^4.0.2",
@@ -25,6 +27,9 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "core-js": "^3.6.5",
     "css-loader": "^3.6.0",
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
