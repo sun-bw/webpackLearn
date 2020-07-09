@@ -49,7 +49,7 @@ module.exports = {
             /**
              * 正常来讲，一个文件只能被一个loader处理
              * 当一个文件要被多个loader处理，那么一定要指定loader执行顺序
-             * 先执行eslint 在执行babel
+             * 先执行eslint 在执行babel，通过enforce:'pre'设置优先执行
              */
             {
                 //在package。json中eslintConfig  airbnb规则
