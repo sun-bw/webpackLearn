@@ -7,6 +7,22 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 //定义nodejs环境变量，决定使用browserslist的哪个环境
 process.env.NODE_ENV = 'production';
 
+/**
+ * 缓存：babel缓存
+ *  直接配置cacheDirectory:true
+ *  让第二次打包构建速度更快
+ * 文件资源缓存
+ *  hash：每次webpack构建打包生成的唯一hash值
+ *  问题：因为js和css同时使用一个hash值，如果重新打包，会导致所有缓存失效
+ *          （可能只改动了一个文件，导致所有文件失效）
+ * chunkhash：如果打包来源同一个chunk，hash值一样。
+ *   问题：js和css，值还是一样
+ *      因为：css是在js文件中被引入，所以同属于一个chunk
+ * contenthash：根据文件的内容生成hash值，不同文件hash值一定不一样
+ * 让代码上线运行缓存更好使用
+ */
+
+
 // 复用cssloader处理
 const commonCssLoader = [
     /*
@@ -33,7 +49,7 @@ const commonCssLoader = [
 module.exports = {
     entry:'./src/js/index.js',
     output:{
-        filename:'js/built.js',
+        filename:'js/built.[contenthash:10].js',
         path:resolve(__dirname,'build')
     },
     module:{
@@ -122,7 +138,7 @@ module.exports = {
     plugins:[
         // 处理css
         new MiniCssExtractPlugin({
-            filename:'css/built.css'
+            filename:'css/built.[contenthash:10].css'
         }),
         // 压缩css
         new OptimizeCssAssetsWebpackPlugin(),
