@@ -85,7 +85,10 @@ module.exports = {
                                         }
                                     }
                                 ]
-                            ]
+                            ],
+                            //开启babel缓存
+                            //第二次构建时，会读取之前的缓存
+                            cacheDirectory:true
                         }
                     },
                     // 处理图片
@@ -135,5 +138,6 @@ module.exports = {
         })
     ],
     //生产环境js自动压缩
-    mode:'production'
+    mode:'production',
+    devtool:'source-map'
 }
